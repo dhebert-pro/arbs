@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from '../routes';
+import { Link } from "routes";
 
 const Homepage = ({datas}) => <div>
     This is Homepage<br/>

@@ -1,11 +1,11 @@
-import React from 'react';
-import withRedux from 'next-redux-wrapper';
+import React from "react";
+import withRedux from "next-redux-wrapper";
 
-import { store } from '../store/configureStore';
-import Footer from '../components/Footer';
-import Category from '../components/Category';
-import Header from '../components/Header';
-import App from '../components/App';
+import { store } from "store/configureStore";
+import Footer from "components/Footer";
+import Category from "components/Category";
+import Header from "components/Header";
+import App from "components/App";
 
 const Page = ({ slug }) => (
     <App className='App Homepage'>
@@ -17,9 +17,8 @@ const Page = ({ slug }) => (
     </App>
 );
 
-Page.getInitialProps = async ({ query }) => {
-    console.log("slug", query.slug);
-    return { slug: query.slug }
-}
+Page.getInitialProps = ({ query }) => {
+    return { slug: query.slug };
+};
 
 export default withRedux(store)(Page);
