@@ -1,10 +1,10 @@
 /*eslint-disable no-console */
 const next = require("next");
 const routes = require("./src/routes");
-const app = next({dir: "src", dev: false});
+const app = next({ dir: "src", dev: false });
 const handler = routes.getRequestHandler(app);
 
-const {createServer} = require("http");
+const { createServer } = require("http");
 
 const port = 8081;
 

@@ -17,8 +17,4 @@ const Page = ({ slug }) => (
     </App>
 );
 
-Page.getInitialProps = ({ query }) => {
-    return { slug: query.slug };
-};
-
 export default withRedux(store)(Page);
