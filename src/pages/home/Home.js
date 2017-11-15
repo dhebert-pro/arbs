@@ -5,13 +5,13 @@ import Header from "components/Header";
 import App from "components/App";
 
 const Page = ({ datas }) => (
-    <App className='App Homepage'>
-        <div>
-            <Header />
-            <Homepage datas={datas} />
-            <Footer />
-        </div>
-    </App>
+  <App className="App Homepage">
+    <div>
+      <Header />
+      <Homepage datas={datas} />
+      <Footer />
+    </div>
+  </App>
 );
 
 export default Page;

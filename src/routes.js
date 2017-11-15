@@ -1,4 +1,3 @@
-const routes = module.exports = require("next-routes")();
+const routes = (module.exports = require("next-routes")());
 
-routes
-    .add("category", "/category/:slug");
+routes.add("category", "/category/:slug");

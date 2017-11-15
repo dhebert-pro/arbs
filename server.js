@@ -1,4 +1,4 @@
-/*eslint-disable no-console */
+/*eslint-disable no-console, import/order */
 const next = require("next");
 const routes = require("./src/routes");
 const app = next({ dir: "src", dev: false });
@@ -9,6 +9,6 @@ const { createServer } = require("http");
 const port = 8081;
 
 app.prepare().then(() => {
-    createServer(handler).listen(port);
-    console.log("Server started on port " + port);
+  createServer(handler).listen(port);
+  console.log("Server started on port " + port);
 });

@@ -5,7 +5,7 @@
         "amd": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "prettier"],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -14,19 +14,19 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "import",
+        "prettier"
     ],
     "rules": {
         "object-curly-spacing": ["error", "always"],
-        "indent": [
-            "error",
-            4
-        ],
+        "import/order": ["error", {"groups": ["external", "internal"], "newlines-between": "always"}],
         "linebreak-style": [
             "error",
             "windows"
         ],
         "no-console": "warn",
+        "prettier/prettier": 1,
         "quotes": [
             "error",
             "double"
