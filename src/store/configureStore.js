@@ -1,52 +1,41 @@
 import { applyMiddleware, createStore } from "redux";
+import axios from "axios";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunkMiddleware from "redux-thunk";
 
-const exampleInitialState = {
-  lastUpdate: 0,
-  light: false,
-  count: 0
-};
+const initialState = {};
 
 export const actionTypes = {
-  ADD: "ADD",
-  TICK: "TICK"
+  FETCH_POSTS: "FETCH_POSTS"
 };
 
 // REDUCERS
-export const reducer = (state = exampleInitialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.TICK:
-      return Object.assign({}, state, {
-        lastUpdate: action.ts,
-        light: !!action.light
-      });
-    case actionTypes.ADD:
-      return Object.assign({}, state, {
-        count: state.count + 1
-      });
+    case actionTypes.FETCH_POSTS:
+      return {
+        ...state,
+        posts: action.payload
+      };
     default:
       return state;
   }
 };
 
+const fetchPostsAction = posts => {
+  return { type: actionTypes.FETCH_POSTS, payload: posts };
+};
+
 // ACTIONS
-export const serverRenderClock = isServer => dispatch => {
-  return dispatch({ type: actionTypes.TICK, light: !isServer, ts: Date.now() });
+export const fetchPosts = () => dispatch => {
+  return axios
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then(result => {
+      return dispatch(fetchPostsAction(result.data));
+    });
 };
 
-export const startClock = () => dispatch => {
-  return setInterval(
-    () => dispatch({ type: actionTypes.TICK, light: true, ts: Date.now() }),
-    800
-  );
-};
-
-export const addCount = () => dispatch => {
-  return dispatch({ type: actionTypes.ADD });
-};
-
-export const store = (initialState = exampleInitialState) => {
+export const store = (initialState = initialState) => {
   return createStore(
     reducer,
     initialState,
