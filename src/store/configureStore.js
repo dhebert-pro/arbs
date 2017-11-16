@@ -3,27 +3,11 @@ import axios from "axios";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunkMiddleware from "redux-thunk";
 
-const initialState = {};
-
-export const actionTypes = {
-  FETCH_POSTS: "FETCH_POSTS"
-};
-
-// REDUCERS
-export const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case actionTypes.FETCH_POSTS:
-      return {
-        ...state,
-        posts: action.payload
-      };
-    default:
-      return state;
-  }
-};
+import reducer from "./reducers";
+import { FETCH_POSTS } from "./actions/types";
 
 const fetchPostsAction = posts => {
-  return { type: actionTypes.FETCH_POSTS, payload: posts };
+  return { type: FETCH_POSTS, payload: posts };
 };
 
 // ACTIONS
@@ -35,7 +19,7 @@ export const fetchPosts = () => dispatch => {
     });
 };
 
-export const store = (initialState = initialState) => {
+export const store = (initialState = {}) => {
   return createStore(
     reducer,
     initialState,

@@ -16,6 +16,6 @@ const mapDispatchToProps = dispatch => {
 
 export default withRedux(
   store,
-  state => ({ posts: state.posts }),
+  state => ({ posts: state.post.posts }),
   mapDispatchToProps
 )(Home);

@@ -1,6 +1,4 @@
 import React from "react";
-import withRedux from "next-redux-wrapper";
-import { store } from "store/configureStore";
 import Footer from "components/Footer";
 import Category from "components/Category";
 import Header from "components/Header";
@@ -16,4 +14,4 @@ const Page = ({ slug }) => (
   </App>
 );
 
-export default withRedux(store)(Page);
+export default Page;
