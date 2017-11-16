@@ -9,8 +9,8 @@ const Homepage = ({ datas }) => (
     </Link>
     {datas &&
       datas.map(data => (
-        <div key={data.id}>
-          {data.title} ***** {data.body}
+        <div key={data._id}>
+          {data.nom} ** {data.adresse} ** {data.tel} ** {data.description}
         </div>
       ))}
   </div>

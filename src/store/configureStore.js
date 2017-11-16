@@ -12,11 +12,9 @@ const fetchPostsAction = posts => {
 
 // ACTIONS
 export const fetchPosts = () => dispatch => {
-  return axios
-    .get("https://jsonplaceholder.typicode.com/posts")
-    .then(result => {
-      return dispatch(fetchPostsAction(result.data));
-    });
+  return axios.get("http://localhost:3001/piscines").then(result => {
+    return dispatch(fetchPostsAction(result.data));
+  });
 };
 
 export const store = (initialState = {}) => {
