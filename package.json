@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "Sourivore",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
