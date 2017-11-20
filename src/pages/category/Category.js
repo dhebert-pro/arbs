@@ -7,7 +7,7 @@ import App from "components/App";
 const Page = ({ slug }) => (
   <App className="App Homepage">
     <div>
-      <Header displaySearch={true} />
+      <Header />
       <Category slug={slug} />
       <Footer />
     </div>
