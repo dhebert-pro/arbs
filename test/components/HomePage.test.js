@@ -24,7 +24,7 @@ describe("Homepage", () => {
   });
   test("should render datas", done => {
     const component = shallow(<Homepage datas={datas} />);
-    expect(component.length).toEqual(1);
+    expect(component.is("div")).toEqual(true);
     expect(component.find("div > div[name='datas']").text()).toEqual(
       "NOM ** ADRESSE ** TEL ** DESCRIPTION"
     );

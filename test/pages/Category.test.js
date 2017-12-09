@@ -3,7 +3,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
-import Category from "pages/category";
+import Category from "pages/category/Category";
+import CategoryContainer from "pages/category";
 
 jest.mock("components/App", () => ({ children }) => (
   <div name="App">{children}</div>
@@ -21,7 +22,17 @@ describe("Category Page", () => {
   });
   test("should get posts", done => {
     const component = shallow(<Category />);
-    expect(component.find("div").length).toEqual(1); //FAILED
+    expect(component.find("div").length).toEqual(1);
     done();
+  });
+});
+
+describe("Category Container", () => {
+  test("should init slug", done => {
+    const props = { query: { slug: "TEST" } };
+    CategoryContainer.getInitialProps(props).then(result => {
+      expect(result.initialProps).toEqual({ slug: "TEST" });
+      done();
+    });
   });
 });

@@ -18,7 +18,7 @@ describe("App", () => {
   });
   test("should render children", done => {
     const component = shallow(<App>TEST</App>);
-    expect(component.find("div").length).toEqual(1);
+    expect(component.is("div")).toEqual(true);
     expect(component.find("div").text()).toEqual("TEST");
     done();
   });

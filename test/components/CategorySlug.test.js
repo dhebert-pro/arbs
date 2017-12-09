@@ -14,7 +14,7 @@ describe("CategorySlug", () => {
   });
   test("should render slug", done => {
     const component = shallow(<CategorySlug slug="TEST" />);
-    expect(component.find("div").length).toEqual(1);
+    expect(component.is("div")).toEqual(true);
     expect(component.find("div").text()).toEqual("La catégorie est : TEST");
     done();
   });
