@@ -17,7 +17,7 @@ export const fetchPosts = () => dispatch => {
   });
 };
 
-export const store = (initialState = {}) => {
+export const store = initialState => {
   return createStore(
     reducer,
     initialState,

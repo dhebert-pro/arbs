@@ -1,7 +1,6 @@
 /*global jest expect test describe:true */
 /*eslint no-undef: "error"*/
 import React from "react";
-import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import Category from "pages/category/Category";
 import CategoryContainer from "pages/category";
@@ -20,14 +19,14 @@ describe("Category Page", () => {
     expect(tree).toMatchSnapshot();
     done();
   });
-  test("should get posts", done => {
-    const component = shallow(<Category />);
-    expect(component.find("div").length).toEqual(1);
-    done();
-  });
 });
 
 describe("Category Container", () => {
+  test("should be rendered", done => {
+    const component = renderer.create(<CategoryContainer />);
+    expect(component).toMatchSnapshot();
+    done();
+  });
   test("should init slug", done => {
     const props = { query: { slug: "TEST" } };
     CategoryContainer.getInitialProps(props).then(result => {
