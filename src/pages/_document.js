@@ -4,7 +4,7 @@ import { renderStatic } from "glamor/server";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
+  static async getInitialProps({ renderPage }) {
     const page = renderPage();
     const styles = renderStatic(() => page.html);
     return { ...page, ...styles };
@@ -24,7 +24,9 @@ export default class MyDocument extends Document {
         <Head>
           <title>Flashcards</title>
           <style
-            dangerouslySetInnerHTML={{ __html: [this.props.css, bootstrap] }}
+            dangerouslySetInnerHTML={{
+              __html: [this.props.css, bootstrap]
+            }}
           />
         </Head>
         <body>

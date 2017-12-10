@@ -5,9 +5,8 @@ import { rehydrate } from "glamor";
 
 import Home from "./Home";
 
-if (typeof window !== "undefined" && process.env.NODE_ENV !== "test") {
-  rehydrate(window.__NEXT_DATA__.ids);
-}
+rehydrate(window.__NEXT_DATA__.ids);
+
 Home.getInitialProps = ({ store }) => {
   return store.dispatch(fetchPosts());
 };
