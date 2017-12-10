@@ -1,7 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import CategorySlug from "components/CategorySlug";
+import { withKnobs, text } from "@storybook/addon-knobs";
 
-storiesOf("CategorySlug", module).add("default", () => (
-  <CategorySlug slug="slug" />
-));
+const stories = storiesOf("CategorySlug", module);
+
+stories.addDecorator(withKnobs);
+
+stories.add("default", () => <CategorySlug slug={text("Slug", "slug")} />);

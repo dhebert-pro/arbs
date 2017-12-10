@@ -45,9 +45,11 @@
     "lint": "eslint .",
     "test": "jest --verbose",
     "coverage": "jest --coverage --verbose",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook -c .storybook -o .out"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^3.2.17",
     "@storybook/react": "^3.2.17",
     "axios-mock-adapter": "^1.10.0",
     "babel-plugin-module-resolver": "^3.0.0",
