@@ -5,6 +5,9 @@
       "plugins": [
         ["module-resolver", {
           "root": ["./src"]
+        }],
+        ["inline-import", {
+          "extensions": [".css"]
         }]
       ]
     },
@@ -13,6 +16,9 @@
       "plugins": [
         ["module-resolver", {
           "root": ["./src"]
+        }],
+        ["inline-import", {
+          "extensions": [".css"]
         }]
       ]
     },

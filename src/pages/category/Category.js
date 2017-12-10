@@ -5,7 +5,7 @@ import Header from "components/Header";
 import App from "components/App";
 
 const Page = ({ slug }) => (
-  <App className="App Homepage">
+  <App>
     <div>
       <Header />
       <CategorySlug slug={slug} />
