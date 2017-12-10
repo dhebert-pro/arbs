@@ -1,13 +1,10 @@
+import { compose } from "recompose";
 import withRedux from "next-redux-wrapper";
 import { store, fetchPosts } from "store/configureStore";
 import { bindActionCreators } from "redux";
-import { rehydrate } from "glamor";
+import withGlamor from "decorators/withGlamor";
 
 import Home from "./Home";
-
-if (typeof window !== "undefined") {
-  rehydrate(window.__NEXT_DATA__.ids);
-}
 
 Home.getInitialProps = ({ store }) => {
   return store.dispatch(fetchPosts());
@@ -19,8 +16,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRedux(
-  store,
-  state => ({ posts: state.post.posts }),
-  mapDispatchToProps
-)(Home);
+const container = compose(
+  withGlamor,
+  withRedux(store, state => ({ posts: state.post.posts }), mapDispatchToProps)
+);
+
+export default container(Home);
