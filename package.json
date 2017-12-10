@@ -13,6 +13,7 @@
     "setupTestFrameworkScriptFile": "<rootDir>/enzyme.conf.js",
     "collectCoverageFrom": [
       "!src/next.config.js",
+      "!src/components/stories/**",
       "src/**/*.{js,jsx}",
       "!**/node_modules/**",
       "!**/build/**"
