@@ -24,7 +24,7 @@
         "import/order": ["error", {"groups": ["external", "internal"], "newlines-between": "always"}],
         "linebreak-style": [
             "error",
-            "windows"
+            "unix"
         ],
         "no-console": "warn",
         "prettier/prettier": 1,
