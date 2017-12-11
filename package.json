@@ -40,13 +40,14 @@
   },
   "scripts": {
     "dev": "next dev src",
-    "start": "node server.js",
+    "start": "next build src && node server.js",
     "build": "next build src",
     "lint": "eslint .",
     "test": "jest --verbose",
     "coverage": "jest --coverage --verbose",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "storybook:build": "build-storybook -c .storybook -o .out",
+    "deploy": "jest && eslint . && next build src && build-storybook -c .storybook -o .out"
   },
   "devDependencies": {
     "@storybook/addon-knobs": "^3.2.17",
