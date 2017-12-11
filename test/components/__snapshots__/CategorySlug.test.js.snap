@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategorySlug should be rendered 1`] = `
+<div>
+  La catégorie est : 
+  TEST
+</div>
+`;

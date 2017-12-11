@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Category Container should be rendered 1`] = `
+<div
+  name="App"
+>
+  <div>
+    <div
+      name="Header"
+    />
+    <div
+      name="CategorySlug"
+    />
+    <div
+      name="Footer"
+    />
+  </div>
+</div>
+`;
+
+exports[`Category Page should be rendered 1`] = `
+<div
+  name="App"
+>
+  <div>
+    <div
+      name="Header"
+    />
+    <div
+      name="CategorySlug"
+    />
+    <div
+      name="Footer"
+    />
+  </div>
+</div>
+`;

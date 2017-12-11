@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage should be rendered 1`] = `
+<div
+  name="homepage"
+>
+  This is Homepage
+  <br />
+  <a
+    href="/category/hello-world"
+    onClick={[Function]}
+  >
+    Aller sur la page hello-world
+  </a>
+  <div
+    name="datas"
+  >
+    <div>
+      NOM
+       ** 
+      ADRESSE
+       ** 
+      TEL
+       ** 
+      DESCRIPTION
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Container should be rendered 1`] = `
+<div
+  name="App"
+>
+  <div>
+    <div
+      name="Header"
+    />
+    <div
+      className="css-1ezp9xe"
+    >
+      Ceci est un titre
+    </div>
+    <div
+      name="Homepage"
+    />
+    <div
+      name="Footer"
+    />
+  </div>
+</div>
+`;
+
+exports[`Home Page should be rendered 1`] = `
+<div
+  name="App"
+>
+  <div>
+    <div
+      name="Header"
+    />
+    <div
+      className="css-1ezp9xe"
+    >
+      Ceci est un titre
+    </div>
+    <div
+      name="Homepage"
+    >
+      "TEST"
+    </div>
+    <div
+      name="Footer"
+    />
+  </div>
+</div>
+`;
